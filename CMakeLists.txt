@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
 
-project(tsl_hat_trie)
+project(tsl_hat_trie VERSION 1.0.0)
 
 add_library(tsl_hat_trie INTERFACE)
 # Use tsl::hat_trie as target, more consistent with other libraries conventions (Boost, Qt, ...)
@@ -16,3 +16,6 @@ target_sources(tsl_hat_trie INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/include/tsl/a
                                       "${CMAKE_CURRENT_SOURCE_DIR}/include/tsl/htrie_set.h")
 
 target_compile_features(tsl_hat_trie INTERFACE cxx_std_11)
+
+install(FILES ${CMAKE_SOURCE_DIR}/include/tsl
+        DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}")
